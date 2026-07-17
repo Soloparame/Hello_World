@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-hw-bg: #050505;
+  --color-hw-card: #0e0e0e;
+  --color-hw-card-hover: #161616;
+  --color-hw-accent: #b1ff00;
+  --color-hw-text: #f3f4f6;
+  --color-hw-muted: #888888;
+  --color-hw-border: #1a1a1a;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-hw-bg);
+  color: var(--color-hw-text);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Keep the desktop composition as spacious as a 90% browser view,
+   without scaling the viewport or breaking fixed-position elements. */
+@media (min-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+/* Hero-only zoom-out — leaves the rest of the page at normal density. */
+.hero-zoom {
+  transform: scale(0.9);
+  transform-origin: center center;
+}
+
+.site-waves-bg {
+  position: relative;
+  isolation: isolate;
+  background-color: transparent;
+}
+
+.site-waves-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(180deg, rgba(5, 5, 5, 0.35) 0%, rgba(5, 5, 5, 0.22) 35%, rgba(5, 5, 5, 0.45) 100%),
+    url('/hero-green-waves.png');
+  background-size: cover;
+  background-position: 70% 30%;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  opacity: 1;
+}
+
+.site-waves-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-visual-bg {
+  background-position: 72% 42%;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .hero-zoom {
+    transform: scale(0.94);
+  }
+
+  .hero-visual-bg {
+    background-position: 78% 38% !important;
+    background-size: cover !important;
+    opacity: 1 !important;
+  }
+
+  .hero-visual-overlay {
+    background:
+      linear-gradient(180deg, rgba(5, 5, 5, 0.08) 0%, rgba(5, 5, 5, 0.02) 40%, rgba(5, 5, 5, 0.2) 100%) !important;
+  }
+
+  .site-waves-bg::before {
+    background-attachment: scroll;
+    background-position: 78% 28%;
+    background-size: cover;
+    background-image:
+      linear-gradient(180deg, rgba(5, 5, 5, 0.28) 0%, rgba(5, 5, 5, 0.16) 40%, rgba(5, 5, 5, 0.38) 100%),
+      url('/hero-green-waves.png');
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .site-waves-bg::before {
+    background-attachment: fixed;
+    background-position: 68% 25%;
+  }
+}
+
+::selection {
+  background-color: var(--color-hw-accent);
+  color: var(--color-hw-bg);
+}
+
+/* Hide scrollbar for clean aesthetic */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-hw-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-hw-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-hw-muted);
+}
+
+.globe-shell::after {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 999px;
+  pointer-events: none;
+  background: radial-gradient(circle at 62% 38%, rgba(177, 255, 0, 0.11), transparent 37%);
+  mix-blend-mode: screen;
+}
+
+.globe-shell--compact::after {
+  inset: 0;
+}
+
+.interactive-earth {
+  position: absolute;
+  inset: 5%;
+  overflow: hidden;
+  border: 1px solid rgba(173, 224, 255, 0.55);
+  border-radius: 50%;
+  background-image:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.42), transparent 18%),
+    radial-gradient(circle at 68% 70%, transparent 28%, rgba(0, 4, 12, 0.74) 72%, #000 100%),
+    url('/earth-atmosphere.jpg');
+  background-position: center, center, 0 center;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-size: 100% 100%, 100% 100%, 200% 100%;
+  box-shadow:
+    inset -54px -38px 85px rgba(0, 0, 0, 0.9),
+    inset 24px 18px 46px rgba(102, 194, 255, 0.16),
+    0 0 30px rgba(82, 177, 255, 0.34),
+    0 0 70px rgba(177, 255, 0, 0.1);
+  transform-style: preserve-3d;
+  will-change: transform, background-position;
+  animation: journey-earth-spin 18s linear infinite;
+}
+
+.interactive-earth::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(112deg, transparent 40%, rgba(255, 255, 255, 0.12) 49%, transparent 58%);
+}
+
+.interactive-earth--compact {
+  inset: 3px;
+  box-shadow:
+    inset -6px -4px 11px rgba(0, 0, 0, 0.9),
+    inset 3px 2px 6px rgba(102, 194, 255, 0.18),
+    0 0 8px rgba(82, 177, 255, 0.32);
+  animation-duration: 11s;
+}
+
+.interactive-earth--still {
+  animation: none;
+}
+
+.interactive-earth-orbit {
+  position: absolute;
+  inset: 4%;
+  z-index: 1;
+  border: 1px solid rgba(177, 255, 0, 0.25);
+  border-radius: 50%;
+  transform: rotateX(68deg) rotateZ(-18deg) scale(1.14);
+  box-shadow: 0 0 14px rgba(177, 255, 0, 0.14);
+  pointer-events: none;
+}
+
+.interactive-earth-orbit--compact {
+  inset: 1px;
+  border-color: rgba(177, 255, 0, 0.18);
+}
+
+.globe-atmosphere {
+  background: rgba(177, 255, 0, 0.07);
+  filter: blur(46px);
+  transform: scale(0.82);
+}
+
+.globe-copy {
+  filter: drop-shadow(0 0 22px rgba(177, 255, 0, 0.18));
+}
+
+.journey-globe-wrap {
+  width: 90px;
+  height: 90px;
+  margin: -45px 0 0 -45px;
+  will-change: left, top, transform, opacity;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.7));
+}
+
+.journey-globe {
+  position: absolute;
+  inset: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(173, 224, 255, 0.55);
+  border-radius: 50%;
+  background-image:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.42), transparent 18%),
+    radial-gradient(circle at 68% 70%, transparent 28%, rgba(0, 4, 12, 0.74) 72%, #000 100%),
+    url('/earth-atmosphere.jpg');
+  background-position: center, center, 0 center;
+  background-repeat: no-repeat, no-repeat, repeat-x;
+  background-size: 100% 100%, 100% 100%, 200% 100%;
+  box-shadow:
+    inset -12px -8px 22px rgba(0, 0, 0, 0.88),
+    inset 6px 4px 12px rgba(102, 194, 255, 0.16),
+    0 0 18px rgba(82, 177, 255, 0.32),
+    0 0 34px rgba(177, 255, 0, 0.1);
+  animation: journey-earth-spin 13s linear infinite;
+}
+
+.journey-globe::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(112deg, transparent 40%, rgba(255, 255, 255, 0.12) 49%, transparent 58%);
+}
+
+.journey-globe--still {
+  animation: none;
+}
+
+.journey-orbit {
+  position: absolute;
+  inset: 1px;
+  border: 1px solid rgba(177, 255, 0, 0.3);
+  border-radius: 50%;
+  transform: rotateX(68deg) rotateZ(-18deg) scale(1.28);
+  box-shadow: 0 0 9px rgba(177, 255, 0, 0.12);
+}
+
+.journey-globe-label {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + 7px);
+  width: max-content;
+  transform: translateX(-50%);
+  color: rgba(177, 255, 0, 0.75);
+  font-family: var(--font-mono);
+  font-size: 7px;
+  letter-spacing: 0.24em;
+}
+
+@keyframes journey-earth-spin {
+  to {
+    background-position: center, center, -200% center;
+  }
+}
+
+.globe-splash i {
+  --particle-angle: 0deg;
+  --particle-distance: 140px;
+  --particle-size: 3px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--particle-size);
+  height: var(--particle-size);
+  border-radius: 999px;
+  background: var(--color-hw-accent);
+  box-shadow: 0 0 10px rgba(177, 255, 0, 0.85);
+  transform: rotate(var(--particle-angle)) translateX(var(--particle-distance));
+}
+
+.cursor-light {
+  width: 260px;
+  height: 260px;
+  margin-left: -130px;
+  margin-top: -130px;
+  border-radius: 999px;
+  opacity: 0.16;
+  background: radial-gradient(circle, rgba(177, 255, 0, 0.7) 0%, rgba(177, 255, 0, 0.16) 24%, transparent 68%);
+  filter: blur(12px);
+  mix-blend-mode: screen;
+}
+
+.cursor-core {
+  width: 8px;
+  height: 8px;
+  margin-left: -4px;
+  margin-top: -4px;
+  border: 1px solid rgba(225, 255, 165, 0.85);
+  border-radius: 999px;
+  background: rgba(177, 255, 0, 0.35);
+  box-shadow: 0 0 14px rgba(177, 255, 0, 0.85);
+}
+
+.project-card {
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  transform: perspective(1100px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform-style: preserve-3d;
+  transition: transform 180ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    360px circle at var(--mouse-x) var(--mouse-y),
+    rgba(177, 255, 0, 0.17),
+    transparent 55%
+  );
+  transition: opacity 300ms ease;
+}
+
+.project-card:hover {
+  border-color: rgba(177, 255, 0, 0.32);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.42), 0 0 40px rgba(177, 255, 0, 0.045);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-light,
+  .cursor-core {
+    display: none !important;
+  }
+
+  .project-card {
+    transform: none;
+  }
+
+  .journey-globe {
+    animation: none;
+  }
+}
