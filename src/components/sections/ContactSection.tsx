@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '../ui/Button';
+﻿import React from 'react'
+import { motion } from 'framer-motion'
+import { Button } from '../ui/Button'
 
 export function ContactSection() {
   return (
@@ -17,17 +17,23 @@ export function ContactSection() {
             >
               <h2 className="text-5xl md:text-6xl font-bold text-white tracking-tight mb-6">
                 Have an idea? <br />
-                <span className="text-hw-accent">Let's build it.</span>
+                <span className="text-hw-accent">Let&apos;s build it.</span>
               </h2>
               <p className="text-lg text-hw-muted font-light max-w-md mb-12 leading-relaxed">
-                Whether you need a website, application, custom software, or reliable hosting infrastructure, let's turn your idea into something real.
+                Whether you need a website, application, custom software, or reliable hosting infrastructure, let&apos;s turn your idea into something real.
               </p>
               
-              <div className="flex flex-col gap-4">
-                <a href="mailto:hello@helloworld.com" className="text-xl font-mono text-white hover:text-hw-accent transition-colors">
-                  hello@helloworld.com
+              <div className="flex flex-col gap-3">
+                <a href="mailto:rebeccayihenew@gmail.com" className="text-xl font-mono text-white hover:text-hw-accent transition-colors break-all">
+                  rebeccayihenew@gmail.com
                 </a>
-                <p className="text-hw-muted">New York, NY — Worldwide</p>
+                <a href="tel:+251989991524" className="text-lg font-mono text-hw-muted hover:text-hw-accent transition-colors">
+                  +251 989 991 524
+                </a>
+                <a href="tel:+251918155305" className="text-lg font-mono text-hw-muted hover:text-hw-accent transition-colors">
+                  +251 918 155 305
+                </a>
+                <p className="text-hw-muted mt-2">Addis Ababa, Ethiopia — Worldwide</p>
               </div>
             </motion.div>
           </div>
@@ -41,15 +47,20 @@ export function ContactSection() {
               className="p-8 rounded-2xl bg-hw-card border border-hw-border"
             >
               <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="flex flex-col gap-2">
                     <label className="text-xs font-mono text-hw-muted uppercase tracking-wider">Name</label>
-                    <input type="text" className="bg-transparent border-b border-hw-border py-2 text-white focus:outline-none focus:border-hw-accent transition-colors" placeholder="John Doe" />
+                    <input type="text" className="bg-transparent border-b border-hw-border py-2 text-white focus:outline-none focus:border-hw-accent transition-colors" placeholder="Abebe Kedede" />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label className="text-xs font-mono text-hw-muted uppercase tracking-wider">Email</label>
-                    <input type="email" className="bg-transparent border-b border-hw-border py-2 text-white focus:outline-none focus:border-hw-accent transition-colors" placeholder="john@example.com" />
+                    <input type="email" className="bg-transparent border-b border-hw-border py-2 text-white focus:outline-none focus:border-hw-accent transition-colors" placeholder="abebde@gmail.com" />
                   </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="text-xs font-mono text-hw-muted uppercase tracking-wider">Phone</label>
+                  <input type="tel" className="bg-transparent border-b border-hw-border py-2 text-white focus:outline-none focus:border-hw-accent transition-colors" placeholder="+2519********" />
                 </div>
                 
                 <div className="flex flex-col gap-2">
@@ -83,5 +94,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

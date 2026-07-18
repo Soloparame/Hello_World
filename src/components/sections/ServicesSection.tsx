@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from '@tanstack/react-router';
 import { motion } from 'framer-motion';
 import { ArrowRight, Monitor, Smartphone, Code2, LayoutDashboard } from 'lucide-react';
 import { Badge } from '../ui/Badge';
@@ -104,10 +105,31 @@ export function ServicesSection() {
                 </div>
               </div>
 
-              <h2 className="text-4xl font-bold text-white mb-4 tracking-tight">Hosting & Infrastructure.</h2>
-              <p className="text-hw-muted mb-8 font-light leading-relaxed">
+              <h2 id="hosting" className="text-4xl font-bold text-white mb-4 tracking-tight">Hosting & Infrastructure.</h2>
+              <p className="text-hw-muted mb-6 font-light leading-relaxed">
                 We don't just build digital products — we keep them online. Reliable hosting, fast global delivery, secure deployment pipelines, and 24/7 monitoring.
               </p>
+
+              <div className="mb-8 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://www.woshostingeth.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-3 rounded-xl border border-hw-accent/30 bg-[#b1ff00]/8 px-4 py-3 hover:bg-[#b1ff00]/14 transition-colors"
+                >
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-wider text-hw-accent mb-1">Live product</div>
+                    <div className="text-white font-semibold">WOS Hosting · woshostingeth.com</div>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-hw-accent ml-auto" />
+                </a>
+                <Link
+                  to="/hosting"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-hw-border px-4 py-3 text-sm text-hw-muted hover:text-white hover:border-hw-accent/40 transition-colors"
+                >
+                  Hosting details <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
 
               {/* Terminal Simulation */}
               <div className="flex-1 rounded-xl bg-[#0a0a0a] border border-hw-border overflow-hidden flex flex-col font-mono text-sm mb-8">
@@ -117,12 +139,12 @@ export function ServicesSection() {
                     <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
                     <div className="w-2.5 h-2.5 rounded-full bg-[#333]" />
                   </div>
-                  <span className="text-xs text-hw-muted ml-2">~/deploy</span>
+                  <span className="text-xs text-hw-muted ml-2">~/wos-hosting</span>
                 </div>
                 <div className="p-4 flex-1 text-hw-muted flex flex-col gap-2">
                   <div className="flex items-center gap-2">
                     <span className="text-hw-accent">$</span>
-                    <span className="text-white">hw deploy --env production</span>
+                    <span className="text-white">hw deploy --provider wos-hosting</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-hw-muted">→ Building assets</span>
@@ -141,7 +163,7 @@ export function ServicesSection() {
                   </div>
                   <div className="flex items-center gap-2 mt-2">
                     <span className="text-hw-muted">→ Live at</span>
-                    <span className="text-hw-accent underline">https://yourdomain.com</span>
+                    <span className="text-hw-accent underline">https://www.woshostingeth.com</span>
                   </div>
                 </div>
               </div>
