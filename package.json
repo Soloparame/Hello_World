@@ -13,8 +13,6 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@oxc-parser/binding-win32-x64-msvc": "^0.120.0",
-    "@rolldown/binding-win32-x64-msvc": "^1.1.5",
     "@tailwindcss/vite": "^4.1.18",
     "@tanstack/react-devtools": "latest",
     "@tanstack/react-router": "latest",
