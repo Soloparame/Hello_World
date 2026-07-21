@@ -8,6 +8,7 @@
   accent: string
   image?: string
   tags?: string[]
+  description: string
 }
 
 export type TeamMember = {
@@ -26,6 +27,8 @@ export type FigmaWork = {
   url?: string
   status: string
   image?: string
+  description: string
+  category?: string
 }
 
 export const projects: Project[] = [
@@ -39,6 +42,8 @@ export const projects: Project[] = [
     accent: 'from-[#3a1c0c]',
     image: '/projects/woscaffe.png',
     tags: ['REACT', 'CMS', 'BRAND'],
+    description:
+      'A warm hospitality site for WOS Caffe — menus, brand story, and booking-ready pages designed to feel as inviting as the café itself.',
   },
   {
     id: '02',
@@ -50,6 +55,8 @@ export const projects: Project[] = [
     accent: 'from-[#0c2a4d]',
     image: '/projects/Eagle.png',
     tags: ['REACT', 'HEALTH', 'SEO'],
+    description:
+      'A clean healthcare presence that helps patients find services, trust the clinic, and take the next step with clear calls to action.',
   },
   {
     id: '03',
@@ -61,6 +68,8 @@ export const projects: Project[] = [
     accent: 'from-[#2b3a11]',
     image: '/projects/Woshosting.png',
     tags: ['HOSTING', 'CLOUD', 'CPANEL'],
+    description:
+      'Our own hosting product — plans, performance, and control-panel flows that make launching and managing sites straightforward.',
   },
   {
     id: '04',
@@ -72,6 +81,8 @@ export const projects: Project[] = [
     accent: 'from-[#113a36]',
     image: '/projects/wosmedical.png',
     tags: ['WEB APP', 'PATIENT', 'OPS'],
+    description:
+      'A medical complex platform built for patients and operations — structured information, modern UX, and room to grow into full clinic tooling.',
   },
   {
     id: '05',
@@ -83,6 +94,8 @@ export const projects: Project[] = [
     accent: 'from-[#3a1c4a]',
     image: '/projects/Madeg.png',
     tags: ['REACT', 'DONATIONS', 'CMS'],
+    description:
+      'A nonprofit site that tells Madeg’s mission clearly, showcases impact, and makes it easy for supporters to engage and give.',
   },
   {
     id: '06',
@@ -94,6 +107,8 @@ export const projects: Project[] = [
     accent: 'from-[#4d2a0c]',
     image: '/projects/Dermacare.png',
     tags: ['REACT', 'UI', 'CLINIC'],
+    description:
+      'A dermatology-focused web experience with calm UI, service clarity, and a product feel tailored for clinic workflows.',
   },
   {
     id: '07',
@@ -105,6 +120,8 @@ export const projects: Project[] = [
     accent: 'from-[#0d3f2b]',
     image: '/projects/multimodal-ai.png',
     tags: ['AI', 'MULTIMODAL', 'PRODUCT'],
+    description:
+      'An AI product suite interface for multimodal tools — fast, modern, and built to showcase capability without overwhelming the user.',
   },
 ]
 
@@ -137,14 +154,20 @@ export const figmaWorks: FigmaWork[] = [
     name: 'Shega Date',
     url: 'https://www.figma.com/design/7QyWzvcUgiO2NEsrqDklzG/Shega-Date?node-id=0-1&p=f&t=3Y0TxRhCVoeVJAbk-0',
     status: 'Live in Figma',
+    category: 'Product Design',
     image: '/projects/shega.png',
+    description:
+      'A dating product interface system — flows, components, and visual language designed end-to-end in Figma before development.',
   },
   {
     id: '02',
     name: 'AVS',
     url: 'https://www.figma.com/design/Kr2u6a2jOThmYTB3wkU8mt/Untitled?t=OmZ6t3pOJCttI6WS-0',
     status: 'Live in Figma',
+    category: 'Brand & UI',
     image: '/projects/Avs.png',
+    description:
+      'A polished UI and brand exploration in Figma, built to define layout, hierarchy, and interaction patterns before shipping.',
   },
 ]
 

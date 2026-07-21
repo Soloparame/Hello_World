@@ -1,5 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from 'react'
+import { motion } from 'framer-motion'
+import { InteractiveGlobe } from '../ui/InteractiveGlobe'
 
 const steps = [
   {
@@ -27,32 +28,41 @@ const steps = [
     title: 'Host & Grow',
     description: 'Keep it fast, secure, reliable, and ready to scale across our premium infrastructure.',
   },
-];
+]
 
 export function ProcessSection() {
   return (
-    <section className="py-32 bg-transparent relative">
+    <section id="process" className="py-32 bg-transparent relative overflow-hidden">
       <div className="container mx-auto px-6 max-w-5xl">
-        <div className="text-center mb-24">
+        <div className="text-center mb-16 md:mb-24">
           <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight mb-4">How we build.</h2>
-          <p className="text-hw-muted text-lg font-light max-w-2xl mx-auto">
+          <p className="text-hw-muted text-lg font-light max-w-2xl mx-auto mb-10">
             A refined process from the first idea to the final deployment.
           </p>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto w-full max-w-[220px] sm:max-w-[260px] md:max-w-[300px]"
+          >
+            <InteractiveGlobe labels />
+          </motion.div>
         </div>
 
         <div className="relative">
-          {/* Vertical Line */}
           <div className="absolute left-[50%] top-0 bottom-0 w-[1px] bg-hw-border hidden md:block" />
-          
+
           <div className="flex flex-col gap-12 md:gap-24">
             {steps.map((step, index) => {
-              const isEven = index % 2 === 0;
+              const isEven = index % 2 === 0
               return (
                 <motion.div
                   key={step.num}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  viewport={{ once: true, margin: '-100px' }}
                   transition={{ duration: 0.7 }}
                   className={`flex flex-col md:flex-row items-center gap-8 ${isEven ? 'md:flex-row-reverse' : ''}`}
                 >
@@ -62,13 +72,10 @@ export function ProcessSection() {
                         STEP {step.num}
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-3">{step.title}</h3>
-                      <p className="text-hw-muted font-light leading-relaxed">
-                        {step.description}
-                      </p>
+                      <p className="text-hw-muted font-light leading-relaxed">{step.description}</p>
                     </div>
                   </div>
 
-                  {/* Center Node */}
                   <div className="hidden md:flex flex-col items-center justify-center relative z-10">
                     <div className="w-8 h-8 rounded-full bg-hw-bg border border-hw-border flex items-center justify-center">
                       <div className="w-2 h-2 rounded-full bg-hw-accent shadow-[0_0_10px_#b1ff00]" />
@@ -77,11 +84,11 @@ export function ProcessSection() {
 
                   <div className="flex-1 hidden md:block" />
                 </motion.div>
-              );
+              )
             })}
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
