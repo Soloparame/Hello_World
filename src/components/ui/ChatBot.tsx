@@ -30,13 +30,13 @@ const starter: ChatMessage[] = [
     id: 'welcome',
     role: 'assistant',
     content:
-      'Hi, I am the Hello World assistant powered by Groq. Ask about projects, hosting, the team, pricing, or how we can build with you.',
+      'Hi — I am the Hello World assistant. Ask about projects, hosting, the team, pricing, or how we can build with you.',
   },
 ]
 
 async function requestAssistantReply(history: ChatMessage[]): Promise<string> {
   if (!IS_GROQ_CONFIGURED) {
-    return 'Groq is not configured yet. Add your Groq API key in the env file to connect the assistant.'
+    return 'Chat is not configured yet. Please email rebeccayihenew@gmail.com for now.'
   }
 
   const payload = {
@@ -65,7 +65,7 @@ async function requestAssistantReply(history: ChatMessage[]): Promise<string> {
 
   if (!response.ok) {
     const detail = await response.text()
-    throw new Error(detail || `Groq request failed (${response.status})`)
+    throw new Error(detail || `Chat request failed (${response.status})`)
   }
 
   const data = await response.json()
@@ -116,7 +116,7 @@ function ChatBotPanel() {
         { id: crypto.randomUUID(), role: 'assistant', content: reply },
       ])
     } catch (err) {
-      const message = err instanceof Error ? err.message : 'Unable to reach Groq'
+      const message = err instanceof Error ? err.message : 'Unable to reach the assistant'
       setError(message)
       setMessages((current) => [
         ...current,
@@ -124,7 +124,7 @@ function ChatBotPanel() {
           id: crypto.randomUUID(),
           role: 'assistant',
           content:
-            'Sorry, I could not reach Groq right now. Please try again in a moment or email rebeccayihenew@gmail.com.',
+            'Sorry, I could not reply right now. Please try again in a moment or email rebeccayihenew@gmail.com.',
         },
       ])
     } finally {

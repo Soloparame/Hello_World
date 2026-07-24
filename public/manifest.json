@@ -1,6 +1,7 @@
 ﻿{
   "short_name": "Hello World",
-  "name": "Hello World",
+  "name": "Hello World — Ethiopian Digital Agency",
+  "description": "Ethiopian digital agency in Addis Ababa building websites, apps, custom software, UI/UX, and hosting for Ethiopia and worldwide.",
   "icons": [
     {
       "src": "favicon.svg",
@@ -21,5 +22,7 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#050505",
-  "background_color": "#050505"
+  "background_color": "#050505",
+  "lang": "en",
+  "categories": ["business", "productivity"]
 }
