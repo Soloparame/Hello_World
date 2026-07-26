@@ -8,7 +8,7 @@ export function applySeoAbsoluteUrls() {
   const configured = (import.meta.env.VITE_SITE_URL as string | undefined)?.replace(/\/$/, '')
   const origin = configured || window.location.origin
   const pageUrl = `${origin}${window.location.pathname === '/' ? '/' : window.location.pathname}`
-  const imageUrl = `${origin}/logo512.png`
+  const imageUrl = `${origin}/logo512.png?v=3`
 
   const setAttr = (id: string, attr: string, value: string) => {
     const el = document.getElementById(id)
