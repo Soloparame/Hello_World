@@ -146,6 +146,15 @@ export const teamMembers: TeamMember[] = [
     bio: 'Rebika architects and builds the technical foundation behind Hello World products — from modern web platforms to AI-powered experiences — with craft, speed, and engineering rigor.',
     focus: ['Software architecture', 'Full-stack engineering', 'AI products', 'Technical direction'],
   },
+  {
+    slug: 'ermias-desalegn',
+    name: 'Ermias Desalegn',
+    role: 'Software Developer, React Expert, MERN Stack Developer',
+    title: 'Software Developer · React · MERN',
+    photo: '/team/ermias-desalegn.jpg',
+    bio: 'Ermias builds the interfaces and full-stack products behind Hello World — React frontends and MERN applications that stay fast, clear, and ready for real users.',
+    focus: ['React', 'MERN stack', 'Full-stack development', 'Product engineering'],
+  },
 ]
 
 export const figmaWorks: FigmaWork[] = [

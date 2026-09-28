@@ -29,7 +29,7 @@ function TeamPage() {
               Meet the people behind <span className="text-hw-accent">Hello World.</span>
             </h1>
             <p className="text-lg text-hw-muted font-light leading-relaxed mb-8 max-w-2xl">
-              Strategy and engineering in one tight leadership pair — shipping digital products that perform.
+              Strategy, engineering, and product development — shipping digital products that perform.
             </p>
             <Link to="/">
               <Button variant="outline" size="sm" icon={<ArrowRight className="w-4 h-4" />}>
@@ -47,7 +47,7 @@ function TeamPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.65 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center ${
+                className={`scroll-mt-28 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center ${
                   index % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''
                 }`}
               >
@@ -91,7 +91,7 @@ function TeamPage() {
                     <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-hw-accent mb-1">
                       {member.title}
                     </div>
-                    <div className="text-white font-semibold">Hello World · Leadership</div>
+                    <div className="text-white font-semibold">Hello World</div>
                   </div>
                 </div>
               </motion.div>

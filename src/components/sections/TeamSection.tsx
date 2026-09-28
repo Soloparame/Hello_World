@@ -18,7 +18,7 @@ export function TeamSection() {
               The people behind the <span className="text-hw-accent">build.</span>
             </h2>
             <p className="text-lg text-hw-muted font-light leading-relaxed">
-              A tight leadership pair spanning strategy, product, and engineering — building digital products that ship and stay alive.
+              Strategy, product, and engineering together — building digital products that ship and stay alive.
             </p>
           </div>
           <Link to="/team">
@@ -28,7 +28,7 @@ export function TeamSection() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-30">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-30">
           {teamMembers.map((member, index) => (
             <motion.div
               key={member.slug}
@@ -39,6 +39,7 @@ export function TeamSection() {
             >
               <Link
                 to="/team"
+                hash={member.slug}
                 className="group block rounded-2xl border border-hw-border bg-hw-card overflow-hidden hover:border-hw-accent/40 transition-colors relative z-30"
               >
                 <div className="aspect-[4/5] overflow-hidden bg-black relative">
